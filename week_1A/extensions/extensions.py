@@ -30,4 +30,3 @@ def file_disc(file):
     else:
         return "application/octet-stream"
 main()
-#check50 cs50/problems/2022/python/extensions
