@@ -1,6 +1,8 @@
 camel_case=input(f"camelCase: ").strip()
-camel_case=camel_case.replace("", " ")
-s=camel_case.split()
+print("snake_case: ", end="")
 
-for c in s:
-    print(c)
+for letter in camel_case:
+    if letter.isupper():
+        print("_"+letter.lower(), end="")
+    else:
+        print(letter, end="")    
