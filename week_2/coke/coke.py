@@ -1,6 +1,6 @@
 def main():
     coin_tuple=(5,10,25)
-    print(f"You only can use this coins '5', '10', '25'")
+    print(printable_machine (coin_tuple))
    
     amount_due=50
     while amount_due > 0:
@@ -14,5 +14,10 @@ def main():
         else:
             continue
     print(f"change owed: {str(amount_due).strip("-")}")
+
+def printable_machine(coins):
+    return f"""
+    You only can use this coins {coins[0]}, {coins[1]}, {coins[2]}
+    """
 
 main()
