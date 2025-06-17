@@ -11,19 +11,25 @@ mexico={
 def main():
     total=0
     key_value=0
-    while key_value!=-1:
+    while key_value!=mexico[""]:
         key_value=get_order()
-        if key_value in mexico:
-            print(f"${sum_up(total,key_value)}")
+        if key_value!=mexico[""]:
+            total+=key_value
+            print(f"Total: ${total}")
+        
 
 def get_order():
     while True:
-        try:
+        
             order=input(f"Item: ").strip().lower()
             order=order.title()
-            return mexico.get(order)
-        except EOFError:
-            pass
+            try:
+               return mexico[f"{order}"]
+            except:
+                EOFError
+                
 
 def sum_up(total, key_value):
     return total+key_value
+
+main()
