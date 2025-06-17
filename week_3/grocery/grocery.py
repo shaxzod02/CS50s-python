@@ -1,18 +1,17 @@
 def main():
-    grocery_list=[]
+    grocery_dict=[]
     while True:
         try:
-            user_input=input().upper()
+            user_input=input().upper().strip()
             if user_input=="":
                 raise EOFError
-            elif not user_input in grocery_list:
-                grocery_list.append(user_input)
+            elif not user_input in grocery_dict:
+                grocery_dict.update({user_input:1})
             else:
-                continue
+                grocery_dict[user_input]+=1
         except EOFError:
             break
-    grocery_list=sorted(grocery_list)
-    for i in range(len(grocery_list)):
-        print(f"{i+1} {grocery_list[i]}")
+    for item in sorted(grocery_dict):
+        print(f"{grocery_dict[item]} {item}")
 
 main()            
