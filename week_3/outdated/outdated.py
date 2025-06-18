@@ -1,4 +1,4 @@
-[
+month_list=[
     "January","February","March","April","May","June","July","August","September","October","November","December"
 ]
 def main():
@@ -32,3 +32,12 @@ def main():
                     raise EOFError
                 else:
                     break
+        except EOFError:
+            pass
+        except ValueError:
+            pass
+        except KeyError:
+            pass
+    print(f"{z}-{x:02}-{y:02}")
+
+main()
